@@ -1,0 +1,102 @@
+/* Base */
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+}
+
+/* Layout */
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background: linear-gradient(135deg, #1b5e20, #2e7d32);
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.sidebar .nav-link {
+  color: #ffffff;
+  font-weight: 500;
+  border-radius: 10px;
+}
+
+.sidebar .nav-link.active {
+  background: rgba(255, 235, 59, 0.25);
+  color: #ffeb3b;
+  font-weight: 600;
+}
+
+/* Center Sidebar Logo */
+.sidebar-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0.75rem 0;
+}
+
+.sidebar hr {
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Main Content */
+.main-content {
+  flex-grow: 1;
+  padding: 2rem;
+  background: linear-gradient(180deg, #f3faf6 0%, #ffffff 60%);
+}
+
+/* Cards */
+.card {
+  border: none;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #ffffff, #f6fbf8);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(27, 94, 32, 0.15);
+}
+
+.card-header {
+  background: rgba(46, 125, 50, 0.08);
+  font-weight: 600;
+}
+
+.card-body h3 {
+  font-weight: 700;
+  color: #1b5e20;
+}
+
+/* Status Colors */
+#lowStockCount {
+  color: #f9a825;
+}
+
+#nearExpiryCount {
+  color: #66bb6a;
+}
+
+#expiredCount {
+  color: #c62828;
+}
+
+/* Table */
+.table th,
+.table td {
+  vertical-align: middle;
+}
+
+.table thead tr {
+  background: linear-gradient(135deg, #2e7d32, #43a047);
+}
+
+.table thead th {
+  color: #ffffff !important;
+  border-bottom: none;
+}

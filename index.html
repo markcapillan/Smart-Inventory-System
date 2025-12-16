@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Inventory Dashboard</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="static/index.css">
+</head>
+<body>
+
+  <!-- Layout Wrapper -->
+  <div class="layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar d-flex flex-column p-3">
+      <a href="index.html" class="sidebar-logo text-white text-decoration-none mb-3">
+        <span class="fs-5 fw-semibold">📦 Smart Inventory</span>
+      </a>
+      <hr>
+      <ul class="nav nav-pills flex-column mb-auto">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link active" id="nav-dashboard">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a href="templates/Inventory.html" class="nav-link" id="nav-inventory">Inventory</a>
+        </li>
+      <li class="nav-item">
+        <a href="templates/transactions.html" class="nav-link" id="nav-transactions">
+          Transactions
+        </a>
+      </li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="container-fluid">
+
+        <!-- Dashboard Summary Cards -->
+        <div class="row g-3 mb-4">
+          <div class="col-md-3">
+            <div class="card shadow-sm text-center">
+              <div class="card-body">
+                <h6 class="text-muted">Total Items</h6>
+                <h3 id="totalItems">0</h3>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="card shadow-sm text-center">
+              <div class="card-body">
+                <h6 class="text-muted">Low Stock</h6>
+                <h3 id="lowStockCount">0</h3>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="card shadow-sm text-center">
+              <div class="card-body">
+                <h6 class="text-muted">Near Expiry</h6>
+                <h3 id="nearExpiryCount">0</h3>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="card shadow-sm text-center">
+              <div class="card-body">
+                <h6 class="text-muted">Expired</h6>
+                <h3 id="expiredCount">0</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Analytics Section -->
+        <div class="row g-4">
+          <!-- Pie Chart -->
+          <div class="col-md-6">
+            <div class="card shadow-sm">
+              <div class="card-header fw-semibold">Inventory Status</div>
+              <div class="card-body" style="height: 250px;"> <!-- Smaller height -->
+                <canvas id="statusPieChart"></canvas>
+              </div>
+            </div>
+          </div>
+
+          <!-- Analytics Table -->
+          <div class="col-md-6">
+            <div class="card shadow-sm">
+              <div class="card-header fw-semibold">Inventory by Category</div>
+              <div class="table-responsive">
+                <table class="table table-striped mb-0">
+                  <thead>
+                    <tr>
+                      <th>Category</th>
+                      <th>Total Items</th>
+                      <th>Low Stock</th>
+                      <th>Near Expiry</th>
+                      <th>Expired</th>
+                    </tr>
+                  </thead>
+                  <tbody id="categoryAnalytics">
+                    <tr>
+                      <td colspan="5" class="text-center text-muted">No data yet</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- LocalStorage JS -->
+  <script src="assets/LocalStorage.js"></script>
+
+  <!-- Dashboard JS -->
+  <script src="assets/dashboard.js"></script>
+</body>
+</html>
